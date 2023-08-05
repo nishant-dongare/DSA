@@ -7,7 +7,7 @@ void main(){
   // printf("%d",last);
   printf("\nEnter Element to be search : ");
   scanf("%d",&element);
-  int result=binarySearch(a,element,len)+1;
+  int result=binarySearch(a,element,len);
   if(result>0)
     printf("\nElement Found at %d\n",result);
   else 
@@ -25,5 +25,5 @@ int binarySearch(int a[],int element,int high){
     mid=(high+low)/2;
     // printf("\n%d %d %d",low,mid,high);
   }
-  return a[mid]==element ? mid: -1;
+  return a[mid]==element ? mid+1: 0;
 }
