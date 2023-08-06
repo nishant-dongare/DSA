@@ -3,11 +3,11 @@
 int TOP=-1;
 int array[5];
 
-void addElement();
+void push();
 int findElement();
 void display();
-void removeElement();
-void removeAllElement();
+void pop();
+void removeAll();
 
 void main(){
   int c;
@@ -16,13 +16,13 @@ void main(){
     scanf("%d",&c);
     switch(c){
       case 1:
-        addElement();
+        push();
         break;
       case 2:printf("%d",findElement()++);
         break;
       case 3:display();
         break;
-      case 4:removeElement();
+      case 4:pop();
         break;
       case 5:removeAllElement();
         break;
@@ -31,7 +31,7 @@ void main(){
   }
 }
 
-void addElement(){
+void push(){
   TOP++;
   printf("\nEnter your number : ");
   scanf("%d",&array[TOP]);
@@ -55,7 +55,7 @@ void display(){
   }
 }
 
-void removeElement(){
+void pop(){
   array[TOP]=NULL;
   TOP--;
 }
