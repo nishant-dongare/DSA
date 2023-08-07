@@ -2,15 +2,15 @@
 #include<stdlib.h>
 
 void push();
-int findElement();
-void display();
+void traversal();
 void pop();
 void removeAll();
 
 struct node{
-  int item;
+  int value;
   struct node * next;
-}
+};
+
 struct node *head=NULL,*top=NULL;
 int size=-1;
 
@@ -20,16 +20,13 @@ void main(){
     printf("\nEnter your choice : ");
     scanf("%d",&c);
     switch(c){
-      case 1:
-        push();
+      case 1:traversal();
         break;
-      case 2:printf("%d",findElement()++);
+      case 2:push();
         break;
-      case 3:display();
+      case 3:pop();
         break;
-      case 4:pop();
-        break;
-      case 5:removeAllElement();
+      case 4:removeAll();
         break;
       default:c=0;
     }
@@ -37,24 +34,19 @@ void main(){
 }
 
 void push(){
-  int e;
+  struct node * newNode = malloc(sizeof(struct node));
   printf("Enter the element to be inserted : \n");
-  scanf("%d",&e);
-  if(top == NULL){
-    // struct node * newNode = malloc(size(struct node));
-    head->item=item;
-    head->next= top;
+  scanf("%d",&newNode->value);
+  newNode->next= NULL;
+  if(head==NULL){         
+    head=newNode;  
     top=head;
-    size++;
-    if(head->next == NULL) printf("true");
-    return;
-  }else{
-    struct node * newNode = malloc(size(struct node));
-    newNode->item = item;
-    newNode->next = top;
-    top = newNode;
-    size++;
   }
+  else{
+    top->next=newNode;
+    top = newNode;
+  }
+  size++;
 }
 
 void pop(){
@@ -62,10 +54,38 @@ void pop(){
   if(head->next == NULL){
     head=NULL;
     free(head);
-    size--;
   }
   else{
-    
+    struct node * ptr;
+    ptr=head;
+    for(;ptr->next != top;ptr=ptr->next);
+    ptr->next=NULL;
+    free(top);
+    top=ptr;
   }
+  size--;
+}
 
+void traversal(){
+  struct node * ptr;
+  ptr=head;
+  if(ptr == NULL){  
+    printf("Stack is empty\n");  
+  }else{  
+    printf("Printing Stack elements \n");  
+    while(ptr!=NULL){
+      printf("->%d",ptr->value);  
+      ptr = ptr->next;  
+    }  
+  }  
+}
+
+void removeAll(){
+  struct node * ptr;
+  while(head!=NULL){
+    ptr=head;
+    head=head->next;
+    free(ptr);
+  }
+  size=-1;
 }
