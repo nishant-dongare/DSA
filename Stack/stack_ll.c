@@ -74,7 +74,7 @@ void traversal(){
   }else{  
     printf("Printing Stack elements \n");  
     while(ptr!=NULL){
-      printf("->%d",ptr->value);  
+      printf("=>%d",ptr->value);  
       ptr = ptr->next;  
     }  
   }  
