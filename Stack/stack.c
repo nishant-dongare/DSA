@@ -4,8 +4,8 @@ int TOP=-1;
 int array[5];
 
 void push();
-int findElement();
-void display();
+int search();
+void traversal();
 void pop();
 void removeAll();
 
@@ -15,16 +15,15 @@ void main(){
     printf("\nEnter your choice : ");
     scanf("%d",&c);
     switch(c){
-      case 1:
-        push();
+      case 1:traversal();
         break;
-      case 2:printf("%d",findElement()++);
+      case 2:push();
         break;
-      case 3:display();
+      case 3:pop();
         break;
-      case 4:pop();
+      case 4:search();
         break;
-      case 5:removeAllElement();
+      case 5:removeAll();
         break;
       default:c=0;
     }
@@ -37,7 +36,7 @@ void push(){
   scanf("%d",&array[TOP]);
 }
 
-int findElement(){
+int search(){
   int n;
   printf("\nEnter your number : ");
   scanf("%d",&n);
@@ -49,7 +48,7 @@ int findElement(){
   return -1;
 }
 
-void display(){
+void traversal(){
   for(int i=0;i<=TOP;i++){
     printf("%d",array[i]);
   }
@@ -60,7 +59,7 @@ void pop(){
   TOP--;
 }
 
-void removeAllElement(){
+void removeAll(){
   for(int i=0;i<=TOP;i++){
     array[TOP]=NULL;
   }

@@ -16,7 +16,8 @@ void main(){
 
 int binarySearch(int a[],int element,int high){
   int mid=high/2,low=0;
-  while(a[mid]!=element && high>low){
+  while(high>low){
+    if (a[mid]==element) return mid+1;
     if(element < a[mid]){
       high=mid-1;
     }else{
