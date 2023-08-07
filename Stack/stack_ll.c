@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include<stdlib.h>
 
-void push();
 void traversal();
+void push();
 void pop();
+void search();
 void removeAll();
 
 struct node{
@@ -26,7 +27,9 @@ void main(){
         break;
       case 3:pop();
         break;
-      case 4:removeAll();
+      case 4:search();
+        break;
+      case 5:removeAll();
         break;
       default:c=0;
     }
@@ -35,7 +38,7 @@ void main(){
 
 void push(){
   struct node * newNode = malloc(sizeof(struct node));
-  printf("Enter the element to be inserted : \n");
+  printf("\nEnter the element to be inserted : ");
   scanf("%d",&newNode->value);
   newNode->next= NULL;
   if(head==NULL){         
@@ -70,9 +73,9 @@ void traversal(){
   struct node * ptr;
   ptr=head;
   if(ptr == NULL){  
-    printf("Stack is empty\n");  
+    printf("\nStack is empty");  
   }else{  
-    printf("Printing Stack elements \n");  
+    printf("\nPrinting Stack elements");  
     while(ptr!=NULL){
       printf("=>%d",ptr->value);  
       ptr = ptr->next;  
@@ -88,4 +91,13 @@ void removeAll(){
     free(ptr);
   }
   size=-1;
+}
+
+void search(){
+  int value,i=1;
+  printf("Enter the element to Search : \n");
+  scanf("%d",&value);
+  for(struct node * ptr=head;ptr->value!=value;ptr=ptr->next)
+    i++;
+  printf("\nElement is found on %d position\n",i);
 }
