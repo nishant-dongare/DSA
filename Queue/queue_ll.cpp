@@ -15,9 +15,9 @@ struct node{
 struct node * head,* tail;
 
 int main(){
-  for(int i;i!=0;){
+  for(int i=1;i>0;){
     cout<<"\n1.Traversal\n2.Enqueue\n3.Dequeue\n4.Search\n5.RemoveAll\n";
-    // cout<<"\nEnter your choice : ";
+    cout<<"\nEnter your choice : ";
     cin>>i;
     switch(i){
       case 1:traversal();
@@ -71,11 +71,16 @@ void dequeue(){
 void search(){
   if(head==NULL) cout<<"Queue is Empty\n";
   else{
-    int value;
-    struct node * ptr;
+    int value,i=1;
     cout<<"\nEnter the Element : ";
-    cin>>value;
-    for(ptr=head;ptr->value=value;ptr=ptr->next);
+    cin>>value;    
+    
+    struct node * ptr;
+    for(ptr=head;ptr->value!=value && ++i;ptr=ptr->next);
+    if(ptr->value==value)
+      cout<<"\nElement is found at "<<i<<endl;
+    else
+      cout<<"\nElement not found\n";
   }
 }
 
