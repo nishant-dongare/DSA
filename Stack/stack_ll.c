@@ -97,7 +97,12 @@ void search(){
   int value,i=1;
   printf("Enter the element to Search : \n");
   scanf("%d",&value);
-  for(struct node * ptr=head;ptr->value!=value;ptr=ptr->next)
+  for(struct node * ptr=head;ptr!=NULL;ptr=ptr->next){
     i++;
-  printf("\nElement is found on %d position\n",i);
+    if(ptr->value==value){
+      printf("\nElement is found on %d position\n",i);
+      return;
+    }
+  }
+  printf("\nElement not found");
 }

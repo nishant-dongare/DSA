@@ -3,4 +3,4 @@
 # !*/*.cpp    #unignore .c files in each directory
 
 !*/*.         #unignore . files in each directory
-!.gitignore #unignore .gitignore
+!.gitignore   #unignore .gitignore
