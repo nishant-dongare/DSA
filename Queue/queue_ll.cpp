@@ -60,11 +60,9 @@ void enqueue(){
 void dequeue(){
   if(head==NULL) cout<<"Queue is Empty\n";
   else{
-    struct node * ptr;
-    for(ptr=head;ptr->next!=tail;ptr=ptr->next);
-    free(tail);
-    tail=ptr;
-    tail->next=NULL;
+    struct node * ptr=head;
+    head=head->next;
+    free(ptr);
   }
 }
 
