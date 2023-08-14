@@ -39,8 +39,9 @@ int main(){
 
 void traversal(){
   if(head==NULL) cout<<"Queue is Empty\n";
-  for(struct node * ptr=head ;ptr!=NULL;ptr=ptr->next)
-    cout<<" => "<<ptr->value;
+  else
+    for(struct node * ptr=head ;ptr!=NULL;ptr=ptr->next)
+      cout<<" => "<<ptr->value;
 }
 
 void enqueue(){
@@ -84,7 +85,7 @@ void search(){
 
 void removeAll(){
   while(head!=NULL){
-    head=tail;
+    tail=head;
     head=head->next;
     free(tail);
   }

@@ -1,6 +1,4 @@
 */*         #ignore all files in each directory
-# !*/*.c      #unignore .c files in each directory
-# !*/*.cpp    #unignore .c files in each directory
-
-!*/*.*        #unignore . files in each directory
+!*/*.c      #unignore .c files in each directory
+!*/*.cpp    #unignore .cpp files in each directory
 !.gitignore   #unignore .gitignore
