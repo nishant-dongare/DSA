@@ -89,7 +89,6 @@ class CircularLinkedList{
         cout<<ptr<<" => "<<ptr->value<<" "<<ptr->next<<endl;
       }
     }
-
 };
 
 int main(){
