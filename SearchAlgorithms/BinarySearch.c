@@ -15,16 +15,16 @@ void main(){
 }
 
 int binarySearch(int a[],int element,int high){
-  int mid=high/2,low=0;
+  int mid,low=0;
   while(high>low){
+    mid=(high+low)/2;
     if (a[mid]==element) return mid+1;
     if(element < a[mid]){
-      high=mid-1;
+      high=mid;
     }else{
-      low=mid+1;
+      low=mid;
     }
-    mid=(high+low)/2;
     // printf("\n%d %d %d",low,mid,high);
   }
-  return a[mid]==element ? mid+1: 0;
+  return 0;
 }
