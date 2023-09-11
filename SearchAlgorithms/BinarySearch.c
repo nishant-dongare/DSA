@@ -2,9 +2,8 @@
 
 int binarySearch(int[],int,int);
 void main(){
-  int a[5] = {10,20,30,40,50},element,first=0,last;
+  int a[5] = {10,20,30,40,50},element;
   int len = sizeof(a)/sizeof(a[0]);
-  // printf("%d",last);
   printf("\nEnter Element to be search : ");
   scanf("%d",&element);
   int result=binarySearch(a,element,len);
