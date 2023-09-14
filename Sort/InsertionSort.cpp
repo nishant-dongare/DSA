@@ -11,15 +11,18 @@ void printArray(int arr[],int len){
 void insertionSort(int arr[],int len){
   int j,key;
   for(int i=1;i<len;i++){
+    printf("\n%d iteration : \n",i);
     key=arr[i];
     j=i-1;
+    // printArray(arr,len);  
+
     while(j>=0 && arr[j]>key){
         arr[j+1]=arr[j];
         j--;
     }
     arr[j+1]=key;
+    // printArray(arr,len);  
   }
-  printArray(arr,len);  
 }
 
 
