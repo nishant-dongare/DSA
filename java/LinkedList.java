@@ -9,7 +9,6 @@ class LinkedList {
       this.val = val;
       this.next = next;
     }
-
   }
 
   void append(int val) {
@@ -59,9 +58,6 @@ class LinkedList {
     ll.traversal();
     ll.remove();
     ll.traversal();
-
-    LinkedList.Node newn = ll.head;
-    System.out.println(newn);
 
   }
 }
