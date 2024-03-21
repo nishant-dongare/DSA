@@ -42,11 +42,9 @@ class LinkedList {
       Node temp;
       for (temp = head; temp.next != tail; temp = temp.next)
         ;
-      temp.next = null;
-      tail = null;
+      System.out.println("\n" + tail.val + " is removed");
       tail = temp;
-      System.out.print("\n" + head.val + " is removed");
-
+      tail.next = null;
     }
   }
 
